@@ -30,11 +30,6 @@
 			<version>${project.version}</version>
 			<artifactId>openjfx.media.linux_64</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>at.bestsolution.openjfx</groupId>
-			<version>${project.version}</version>
-			<artifactId>openjfx.media.linux_aarch64</artifactId>
-		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -57,7 +52,7 @@
 			<plugin>
 				<groupId>biz.aQute.bnd</groupId>
 				<artifactId>bnd-maven-plugin</artifactId>
-				<version>4.2.0</version>
+				<version>${bnd.version}</version>
 				<configuration>
 					<skip>true</skip>
 				</configuration>

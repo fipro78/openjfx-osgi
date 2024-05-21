@@ -8,30 +8,31 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>openjfx.base</module>
-		<module>openjfx.graphics.mac</module>
-		<module>openjfx.graphics.win32_64</module>
-		<module>openjfx.graphics.linux_64</module>
-		<module>openjfx.fxml</module>
 		<module>openjfx.controls</module>
+		<module>openjfx.fxml</module>
 		<module>openjfx.swing</module>
-		<module>openjfx.media.mac</module>
+		<module>openjfx.swt</module>
+
+		<module>openjfx.graphics.linux_64</module>
+		<module>openjfx.graphics.mac</module>
+		<module>openjfx.graphics.mac_aarch64</module>
+		<module>openjfx.graphics.win32_64</module>
+
 		<module>openjfx.media.linux_64</module>
+		<module>openjfx.media.mac</module>
+		<module>openjfx.media.mac_aarch64</module>
 		<module>openjfx.media.win32_64</module>
+
 		<module>openjfx.web.linux_64</module>
 		<module>openjfx.web.mac</module>
+		<module>openjfx.web.mac_aarch64</module>
 		<module>openjfx.web.win32_64</module>
+
 		<module>openjfx.standard.feature</module>
 		<module>openjfx.media.feature</module>
 		<module>openjfx.web.feature</module>
 		<module>openjfx.swing.feature</module>
-		<module>openjfx.swt</module>
 		<module>openjfx.swt.feature</module>
-		<module>openjfx.graphics.linux_aarch64</module>
-		<module>openjfx.media.linux_aarch64</module>
-		<module>openjfx.web.linux_aarch64</module>
-		<module>openjfx.graphics.mac_aarch64</module>
-		<module>openjfx.media.mac_aarch64</module>
-		<module>openjfx.web.mac_aarch64</module>
 	</modules>
 	
 	<properties>
@@ -41,14 +42,27 @@
 		<maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>
 		<maven-osgi-package-plugin.version>0.0.3-SNAPSHOT</maven-osgi-package-plugin.version>
 		<flatten-maven-plugin.version>1.2.3</flatten-maven-plugin.version>
+		<bnd.version>7.0.0</bnd.version>
+		<tycho.version>4.0.7</tycho.version>
 	</properties>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<name>BestSolution.at snapshots</name>
+			<id>bestsolution-snapshots</id>
+			<url>https://maven.bestsolution.at/repos/snapshots/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
 
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>biz.aQute.bnd</groupId>
 				<artifactId>bnd-maven-plugin</artifactId>
-				<version>4.2.0</version>
+				<version>${bnd.version}</version>
 				<executions>
 					<execution>
 						<id>default-bnd-process</id>

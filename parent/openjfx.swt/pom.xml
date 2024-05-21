@@ -9,14 +9,6 @@
 	</parent>
 	<artifactId>openjfx.swt</artifactId>
 
-	<repositories>
-		<repository>
-			<name>BestSolution.at e(fx)clipse releases</name>
-			<id>efxclipse-releases</id>
-			<url>http://maven.bestsolution.at/efxclipse-releases/</url>
-		</repository>
-	</repositories>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -25,21 +17,23 @@
 				<version>3.1.1</version>
 				<executions>
 					<execution>
-						<id>copy</id>
+						<id>unpack</id>
 						<phase>process-resources</phase>
 						<goals>
-							<goal>copy</goal>
+							<goal>unpack</goal>
 						</goals>
 					</execution>
 				</executions>
 				<configuration>
 					<artifactItems>
 						<artifactItem>
-							<groupId>at.bestsolution.openjfx</groupId>
-							<artifactId>javafx-swt</artifactId>
+							<groupId>org.openjfx</groupId>
+							<artifactId>javafx-graphics</artifactId>
 							<version>${openjfx.version}</version>
+							<classifier>mac</classifier>
 							<type>jar</type>
 							<outputDirectory>${project.build.directory}/classes</outputDirectory>
+							<includes>javafx-swt.jar</includes>
 							<destFileName>javafx.swt.jar</destFileName>
 						</artifactItem>
 					</artifactItems>

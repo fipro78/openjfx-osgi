@@ -72,11 +72,6 @@
 								</artifactItem>
 								<artifactItem>
 									<groupId>at.bestsolution.openjfx</groupId>
-									<artifactId>openjfx.graphics.linux_aarch64</artifactId>
-									<version>${project.version}</version>
-								</artifactItem>
-								<artifactItem>
-									<groupId>at.bestsolution.openjfx</groupId>
 									<artifactId>openjfx.graphics.mac</artifactId>
 									<version>${project.version}</version>
 								</artifactItem>
@@ -93,11 +88,6 @@
 								<artifactItem>
 									<groupId>at.bestsolution.openjfx</groupId>
 									<artifactId>openjfx.media.linux_64</artifactId>
-									<version>${project.version}</version>
-								</artifactItem>
-								<artifactItem>
-									<groupId>at.bestsolution.openjfx</groupId>
-									<artifactId>openjfx.media.linux_aarch64</artifactId>
 									<version>${project.version}</version>
 								</artifactItem>
 								<artifactItem>
@@ -128,11 +118,6 @@
 								<artifactItem>
 									<groupId>at.bestsolution.openjfx</groupId>
 									<artifactId>openjfx.web.linux_64</artifactId>
-									<version>${project.version}</version>
-								</artifactItem>
-								<artifactItem>
-									<groupId>at.bestsolution.openjfx</groupId>
-									<artifactId>openjfx.web.linux_aarch64</artifactId>
 									<version>${project.version}</version>
 								</artifactItem>
 								<artifactItem>
@@ -196,7 +181,7 @@
 			<plugin>
 				<groupId>org.eclipse.tycho.extras</groupId>
 				<artifactId>tycho-p2-extras-plugin</artifactId>
-				<version>1.2.0</version>
+				<version>${tycho.version}</version>
 				<executions>
 					<execution>
 						<phase>prepare-package</phase>
@@ -214,7 +199,7 @@
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-p2-plugin</artifactId>
-				<version>1.2.0</version>
+				<version>${tycho.version}</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -231,7 +216,7 @@
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-p2-repository-plugin</artifactId>
-				<version>1.2.0</version>
+				<version>${tycho.version}</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
